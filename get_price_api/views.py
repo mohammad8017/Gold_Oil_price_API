@@ -40,3 +40,5 @@ class PricesViews(APIView):
 		tempDict = {"start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold}
 		
 		return Response(json.dumps(str(tempDict)))
+
+
