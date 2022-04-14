@@ -1,0 +1,12 @@
+docker exec -ti mysql-server bash 
+
+mysql -u root -p
+
+
+
+
+
+
+
+
+source : https://itnext.io/create-a-mysql-server-with-docker-55ea405f64b0

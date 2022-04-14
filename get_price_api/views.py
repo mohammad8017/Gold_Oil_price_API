@@ -12,6 +12,8 @@ from datetime import datetime
 import requests as req
 from persiantools.jdatetime import JalaliDate
 from datetime import timedelta 
+from django.contrib.auth.models import User
+import mysql.connector
 
 # Create your views here.
 
@@ -54,9 +56,30 @@ class PricesViews(APIView):
 			except:
 				continue
 
+		username = str(request.user)
+		user_token = str(request.auth)
+		curr_time = datetime.now().strftime("%I:%M%p on %B %d, %Y")
+		user = User.objects.first()
+		tempDict = {"user":username , "auth":user_token, "request_time":curr_time, "start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold, "shakhes":final_shakhes}
 		
-		tempDict = {"start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold, "shakhes":final_shakhes}
+		mydb = mysql.connector.connect(
+			host="127.0.0.1",
+			port="3306",
+			user="root",
+			password="123456",
+			database="db_api"
+		)
+
+		mycursor = mydb.cursor()
+
+		mycursor.execute("CREATE TABLE IF NOT EXISTS user_request (username VARCHAR(100), token VARCHAR(100), request_time VARCHAR(100))")
 		
+		sql = "INSERT INTO user_request (username, token, request_time) VALUES (%s, %s, %s)"
+		val = (username, user_token, curr_time)
+		mycursor.execute(sql, val)
+
+		mydb.commit()
+
 		return Response(json.dumps(str(tempDict)))
 
 
