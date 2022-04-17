@@ -61,7 +61,7 @@ class PricesViews(APIView):
 		user_token = str(request.auth)
 		curr_time = datetime.now().strftime("%I:%M%p on %B %d, %Y")
 		user = User.objects.first()
-		tempDict = {"user":username , "auth":user_token, "request_time":curr_time, "start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold, "shakhes":final_shakhes}
+		tempDict = {"request_time":curr_time, "start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold, "shakhes":final_shakhes}
 		
 		mydb = mysql.connector.connect(
 			host="127.0.0.1",
