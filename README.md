@@ -21,7 +21,7 @@ Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specif
     - ```bash
       CREATE DATABASE db_api;
       CREATE USER 'mohammad'@'localhost' IDENTIFIED BY '123456';
-      GRANT ALL PRIVILEGES ON databaseName.* TO 'mohammad'@'localhost';
+      GRANT ALL PRIVILEGES ON db_api.* TO 'mohammad'@'localhost';
       FLUSH PRIVILEGES;
       QUIT
       ```
