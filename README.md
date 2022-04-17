@@ -25,6 +25,10 @@ Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specif
       FLUSH PRIVILEGES;
       QUIT
       ```
+  - For see which users use Prices API use this command in MySQL shell in db_api database
+    - ```bash
+      select * from user_request;
+      ```
       
 * **Virtual Environment**
   - Create Environment
