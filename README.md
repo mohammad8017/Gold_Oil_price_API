@@ -10,7 +10,7 @@ Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specif
       ```
   - create container
     - ```bash
-      docker run -d -p 3306:3306 --name=mysql-server --env="MYSQL_ROOT_PASSWORD=123456" mysql_db
+      docker run -d -p 3306:3306 --name=mysql-server --env="MYSQL_ROOT_PASSWORD=123456" mysql
       ```
   - Access to MySQL
     - ```bash
