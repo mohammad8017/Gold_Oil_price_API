@@ -64,7 +64,8 @@ class PricesViews(APIView):
 		tempDict = {"request_time":curr_time, "start_date":start_date, "end_date":end_date, "oil_prices":final_oil, "gold_prices":final_gold, "shakhes":final_shakhes}
 		
 		mydb = mysql.connector.connect(
-			host="127.0.0.1",
+			# host="127.0.0.1",
+			host="host.docker.internal",
 			port="3306",
 			user="root",
 			password="123456",
