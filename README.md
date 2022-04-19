@@ -35,11 +35,11 @@ Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specif
     - ```bash
       docker pull python
       ```
-  - Create Vontainer
+  - Create Container
     - ```
       docker build -t python:latest .
       ```
-  - create container
+  - Run Container
     - ```bash
       docker run --name django-server -it -p 8000:8000 -e TZ=Asia/Tehran  python bash
       ```
