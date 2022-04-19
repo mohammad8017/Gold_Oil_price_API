@@ -2,7 +2,7 @@
 Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specific date.
 ## Installation
 
-* **Docker** 
+* **Docker MySQL** 
   - Install and signup in [Docker](https://hub.docker.com/)
   - pull mySQL image.
     - ```bash
@@ -28,6 +28,32 @@ Rest API with django-rest-api for give data of oil, Gold and Shakhes in a specif
   - For see which users use Prices API use this command in MySQL shell in db_api database
     - ```bash
       select * from user_request;
+      ```
+* **Docker Django** 
+  - Install and signup in [Docker](https://hub.docker.com/)
+  - pull python image.
+    - ```bash
+      docker pull python
+      ```
+  - Create Vontainer
+    - ```
+      docker build -t python:latest .
+      ```
+  - create container
+    - ```bash
+      docker run --name django-server -it -p 8000:8000 -e TZ=Asia/Tehran  python bash
+      ```
+  - Migrations
+    - ```bash
+      python manage.py makemigrations 
+      ```
+  - Migrate
+    - ```bash
+      python manage.py migrate
+      ```
+  - Run server
+    - ```bash
+      python manage.py runserver 0.0.0.0:8000
       ```
       
 * **Virtual Environment**
