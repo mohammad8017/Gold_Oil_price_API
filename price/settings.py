@@ -104,7 +104,8 @@ DATABASES = {
         'NAME': 'db_api',                   # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '123456',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3. host.docker.internal
+        # 'HOST' : 'host.docker.internal',
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }

@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver"
+    container_name: music_service
+    volumes:
+      - .:/
+    ports:
+      - "8000:8000"
+  mysql:
+    image: mysql
+volumes:
+  logvolume01: {}
